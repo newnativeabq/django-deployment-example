@@ -17,5 +17,8 @@ app_name = 'basic_app'
 
 urlpatterns = [
     path('', views.SchoolListView.as_view(), name='list'),
-    path('<slug:pk>', views.SchoolDetailView.as_view(), name='school-detail'),
+    path('create/', views.SchoolCreate.as_view(), name='create_school'),
+    path('detail/<slug:pk>', views.SchoolDetailView.as_view(), name='school_detail'),
+    path('update/<slug:pk>', views.SchoolUpdate.as_view(), name='update_school'),
+    path('delete/<slug:pk>', views.SchoolDelete.as_view(), name='delete_school')
 ]

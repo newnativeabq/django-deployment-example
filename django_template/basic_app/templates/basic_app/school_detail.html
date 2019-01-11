@@ -8,10 +8,13 @@
         <p>Size: {{school_detail.size}}</p>
         <p>Site: {{school_detail.site}}</p>
         <h3>Students</h3>
-
+ 
             {% for student in school_detail.students.all %}
                 <p>{{student.name}} ({{student.age}})</p>
             {% endfor %}
-
+    </div>
+    <div>
+        <p><a class="btn btn-secondary" href="{% url 'basic_app:update_school' pk=school_detail.pk %}">Update Information</a></p>
+        <p><a class="btn btn-warning" href="{%url 'basic_app:delete_school' pk=school_detail.pk %}">Delete School</a></p>
     </div>
 {% endblock %}
