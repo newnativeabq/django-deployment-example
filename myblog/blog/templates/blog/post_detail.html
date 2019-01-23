@@ -30,7 +30,7 @@
         {% if user.is_authenticated or comment.approved_comment %}
         {{comment.created_date}}
             {% if comment.approved_comment %}
-            <a class="btn btn-primary" href="{% url 'comment_removet' pk=post.pk %}">
+            <a class="btn btn-primary" href="{% url 'comment_remove' pk=post.pk %}">
                 <span class="glyphicon glyphicon-remove"></span>
             </a>
             <a class="btn btn-primary" href="{% url 'comment_approve' pk=post.pk %}">
