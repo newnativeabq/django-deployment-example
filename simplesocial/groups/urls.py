@@ -1,4 +1,4 @@
-"""simplesocial URL Configuration
+"""groups application URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.1/topics/http/urls/
@@ -13,15 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
 from django.urls import path, include
-from . import views as home_views
+from . import views as post_views
 
 urlpatterns = [
-    path('', home_views.HomePage.as_view(), name='home'),
-    path('admin/', admin.site.urls),
-    path('test/', home_views.TestPageView.as_view(), name = 'test'),
-    path('thanks/', home_views.ThanksPageView.as_view(), name = 'thanks'),
-    path('accounts/', include('accounts.urls', namespace='accounts')),
-    path('accounts/', include('django.contrib.auth.urls')),
 ]
