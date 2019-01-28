@@ -16,6 +16,8 @@ Including another URLconf
 from django.urls import path
 from . import views as post_views
 
+app_name = 'posts'
+
 urlpatterns = [
     path('', post_views.PostList.as_view(), name='all'),
     path('new/', post_views.CreatePost.as_view(), name='create'),

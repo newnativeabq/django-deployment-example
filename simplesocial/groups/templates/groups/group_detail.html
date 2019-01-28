@@ -1,8 +1,12 @@
 {% extends "groups/group_base.html" %}
 
 {% block pregroup %}
-<h1>{{ group.name }}</h1>
-<h2>Member Count: {{ group.members.count }}</h2>
+    <div class="container">
+        <h1>{{ group.name }}</h1>
+        <h2>Member Count: {{ group.members.count }}</h2>
+    
+
+
 
 <div class="content">
     {% if user in group.members.all %}
@@ -13,7 +17,7 @@
         class="btn btn-lg btn-outline-primary"><span class="glyphicon glyphicon-ok-circle"></span>Join Group</a>
     {% endif %}
 </div>
-{% block endblock%}
+{% endblock %}
 
 {% block group_content %}
 <div class="col-md-8">
@@ -27,3 +31,4 @@
     {% endif %}
 </div>
 {% endblock %}
+</div>
