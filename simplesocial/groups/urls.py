@@ -13,8 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import path, include
-from . import views as post_views
+from django.urls import path
+from groups import views as group_views
+
+app_name = 'groups'
 
 urlpatterns = [
+    path('', group_views.ListGroups.as_view(), name='all'),
+    path('new/', group_views.CreateGroup.as_view(), name='create'),
+    path('posts/in/<slug:slug>/',group_views.SingleGroup.as_view(), name='single'),
+    path('join/<slug:slug>/', group_views.JoinGroup.as_view(), name='join'),
+    path('leave/<slug:slug>/', group_views.LeaveGroup.as_view(), name='leave'),
 ]
